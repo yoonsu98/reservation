@@ -22,6 +22,9 @@ public class TbUser {
     @Column(name = "kakao_id", nullable = false, length = 20)
     private String kakaoId;
 
+    @Column(name = "is_user")
+    private Boolean isUser;
+
     @Column(name = "refresh_token", nullable = false, length = 100)
     private String refreshToken;
 

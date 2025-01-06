@@ -5,7 +5,10 @@ spring:
       on-profile: "common"
   web:
     locale: ko_KR
-
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
 # Server
 server:
   port: 8082

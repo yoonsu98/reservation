@@ -10,4 +10,4 @@ spring:
   profiles:
     active: loc
     group:
-      "loc": "mysql", "common"
+      "loc": "mysql,common"
