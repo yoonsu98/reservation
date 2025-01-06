@@ -1,0 +1,23 @@
+# ** MySQL  **
+spring:
+  config:
+    activate:
+      on-profile: "mysql"
+
+  # Datasource
+  datasource:
+    url: jdbc:mysql://localhost:3306
+    username: root
+    password: 1234
+    hikari:
+      connection-timeout: 30000
+
+  # JPA
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: true
+    properties:
+      hibernate:
+        show_sql: false
+        format_sql: false

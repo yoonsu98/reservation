@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: reservation
+
+  config:
+    import:
+      - classpath:/config/config-common.yml
+      - classpath:/config/config-mysql.yml
+
+  profiles:
+    active: loc
+    group:
+      "loc": "mysql", "common"
