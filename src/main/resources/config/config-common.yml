@@ -14,3 +14,12 @@ server:
   port: 8082
   tomcat:
     uri-encoding: UTF-8
+
+kakao:
+  client:
+    id: "027af1e1bbd65e2161d454d88f739af6"
+    secret: "FTCBzIYWbw0EmCnDDb5EIeRgS3l47Xkz"
+  grant:
+    type: "authorization_code"
+  redirect:
+    uri: "http://localhost:8082/kakao"

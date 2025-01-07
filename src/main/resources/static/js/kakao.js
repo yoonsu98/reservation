@@ -7,27 +7,25 @@ function fnGetCode() {
     const code = searchParam.get('code');
 
     if (code != null) {
-        alert(code);
         $("#code").val(code);
-        // fnGetTokenInfo(code);
+        fnGetTokenInfo(code);
     }
 };
 
 function fnGetTokenInfo(code) {
     $.ajax({
         type: "post",
-        url: "http://localhost:8081/user/token-info",
+        url: "http://localhost:8082/user/token-info",
         contentType: "application/json",
         data: JSON.stringify({code}),
         success: function (response) {
-            const {accessToken, refreshToken, kakaoId, nickname} = response.data;
+            const {accessToken, refreshToken, kakaoId} = response.data;
             if (accessToken != null) {
                 access_cookie = `access_token=${accessToken};`;
                 refresh_cookie = `refresh_token=${refreshToken};`;
                 document.cookie = access_cookie;
                 document.cookie = refresh_cookie;
-                alert(`${nickname}님 안녕하세요.`);
-                location.href = "http://localhost:8081/main";
+                location.href = "http://localhost:8082/main";
             }
             $("#kakaoId").val(kakaoId);
         },
